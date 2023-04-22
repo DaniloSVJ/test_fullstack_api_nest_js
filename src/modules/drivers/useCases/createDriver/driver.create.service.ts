@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { DriverDTO } from './drivers.dto';
+import { AppError } from '../../../../shared/erros/AppError';
+import { DriverDTO } from '../../drivers.dto';
 
 @Injectable()
-export class DriversService {
+export class CreateServiceDriver {
   constructor(private prisma: PrismaClient) {}
   async create(data: DriverDTO) {
     const driverExists = await this.prisma.driver.findFirst({
@@ -13,7 +14,7 @@ export class DriversService {
     });
 
     if (driverExists) {
-      throw new Error('Driver already exists!');
+      throw new AppError('Driver already exists!');
     }
 
     const driver = await this.prisma.driver.create({
