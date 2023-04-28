@@ -14,18 +14,6 @@ services:
     volumes:
       - pgdata:/data/postgres  
 
-  # app:
-  #   build: .
-  #   container_name: c_drivers
-  #   ports: 
-  #     - 3000:3000
-  #   volumes:
-  #     - .:/usr/app
-  #   links:
-  #     - database
-  #   depends_on: 
-  #     - database  
-
 volumes:
   pgdata:
     driver: local

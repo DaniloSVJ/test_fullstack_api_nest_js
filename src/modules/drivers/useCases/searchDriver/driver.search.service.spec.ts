@@ -33,7 +33,7 @@ describe('UserService', () => {
     it('should return one or more drivers with the search data', async () => {
       const newDriver: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date:  "12/06/1999",
         license: '987456002255',
         car_model: 'Trole',
         license_plate: 'PMN-98754',
@@ -43,7 +43,7 @@ describe('UserService', () => {
 
       const newDriver2: DriverDTO = {
         name: 'Driver2 Teste2',
-        birth_date: new Date(),
+        birth_date:  "12/06/1999",
         license: '357456996633',
         car_model: 'Trole',
         license_plate: 'PMN-22222',
@@ -53,7 +53,7 @@ describe('UserService', () => {
 
       const newDriver3: DriverDTO = {
         name: 'Driver3 Teste3',
-        birth_date: new Date(),
+        birth_date:  "12/06/1999",
         license: '951159886622',
         car_model: 'Trole',
         license_plate: 'PMN-11111',

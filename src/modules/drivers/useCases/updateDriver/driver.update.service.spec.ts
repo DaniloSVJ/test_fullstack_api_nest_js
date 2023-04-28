@@ -32,7 +32,7 @@ describe('UserService', () => {
     it('should be able to create a new driver', async () => {
       const newDriver: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '3216543355447788991100987',
         car_model: 'Trole',
         license_plate: 'PMN-8787878',
@@ -42,7 +42,7 @@ describe('UserService', () => {
       expect(createdDriver).toHaveProperty('id');
       const data: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '3216543355447788991100987',
         car_model: 'Trole',
         license_plate: 'PMN-8787878',

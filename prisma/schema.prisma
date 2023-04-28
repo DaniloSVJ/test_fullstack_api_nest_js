@@ -13,11 +13,13 @@ datasource db {
 model Driver {
   id  String @id @default(uuid())
   name String
-  birth_date DateTime
+  birth_date String
   license String
   car_model String
   license_plate String
-
+  created_at  DateTime   @default(now())
+  updated_at  DateTime   @updatedAt
+  
   @@map("drivers")
 
 }

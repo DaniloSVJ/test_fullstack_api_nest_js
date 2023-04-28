@@ -33,7 +33,7 @@ describe('UserService', () => {
     it('should delete a driver and return empty body', async () => {
       const newDriver: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '4545487333',
         car_model: 'Trole',
         license_plate: 'PMN-8787878',

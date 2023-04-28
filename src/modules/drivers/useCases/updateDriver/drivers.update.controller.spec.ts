@@ -29,7 +29,7 @@ describe('UserController', () => {
     it('CONTROLLER:should be able update a driver', async () => {
       const drive: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '1563333',
         car_model: 'Trole',
         license_plate: 'PMN-8787878',
@@ -38,7 +38,7 @@ describe('UserController', () => {
       const id = driveNew.id
       const data: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '1563333',
         car_model: 'Trole',
         license_plate: 'PMN-8787878',

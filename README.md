@@ -1,73 +1,50 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Para executar api localmente você precisa antes de tudo instalar as dependencias e também instalar o docker na sua máquina.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Para instalar das dependencias deste projeto, digite "yarn" ou "npm i" no terminal da pasta desse projeto, e espere ele instalar todas as dependencias.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Você precisa também instalar agora o Banco de dados Postgres, pois o docker está configurado para trabalhar com o Banco de dados Postgres. 
+Instale o postgres com um dos comando abaixo:
 
-## Description
+npm i pg
+    ou
+yarn add pg    
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Caso você não tenha o docker instalado na sua máquina, consulte o site abaixo e veja como instalar o docker, conforme seu sistema operacional.
 
-## Installation
+PARA INSTALAR NO DOCKER NO WINDOWS:
+https://docs.docker.com/desktop/install/windows-install/
 
-```bash
-$ npm install
-```
+PARA INSTALAR DOCKER NO LINUX:
+https://docs.docker.com/engine/install/ubuntu/
 
-## Running the app
+PARA INSTALAR DOCKER NO MAC:
+https://docs.docker.com/desktop/install/mac-install/
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+Com todas as dependências instaladas, assim como docker; agora instale também o docker-compose. Veja o seguinte site de como instalar o docker-compose: https://docs.docker.com/compose/install/other/
 
-# production mode
-$ npm run start:prod
-```
+Tendo instalado o docker-compose execute o comando: 'docker-compose up' e espere ele terminar de criar o componente do banco de dados. Pode demorar um pouco.
+O comando 'docker-compose up' irá criar o componente do banco de dados.
 
-## Test
+Depois de ele criar o banco, agora é necessário executar as migrations, para criar as tabelas do banco de dados. 
 
-```bash
-# unit tests
-$ npm run test
+Para criar as migrations execute o seguinte comando no terminal da pasta do projeto: npx prisma migrate dev.
 
-# e2e tests
-$ npm run test:e2e
+Observação: Para criar as migrations, o docker precisa está ativo. Caso você tenha fechado a janela depois de criar o componente do banco de dados, então execute 'docker-compose start' no terminal da pasta do projeto. E depois é só executar novamente 'npx prisma migrate dev'
 
-# test coverage
-$ npm run test:cov
-```
+Criando as migrations a api já está pronta para ser consumida. Execute o seguinte comando para executar a aplicação: 
+yarn run start:dev
+  ou
+npm run start:dev
 
-## Support
+Por fim você pode consumir a api pela documentação do swagger. Para isso é só abrir o navegador com o seguinte endereço:
+http://localhost:3000/api/
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](LICENSE).
+
+
+
+

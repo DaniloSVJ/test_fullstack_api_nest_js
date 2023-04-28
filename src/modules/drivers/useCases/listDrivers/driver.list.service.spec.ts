@@ -33,7 +33,7 @@ describe('UserService', () => {
     it('should return the last two created', async () => {
       const newDriver: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '45687951',
         car_model: 'Trole',
         license_plate: 'PMN-456789',
@@ -43,7 +43,7 @@ describe('UserService', () => {
       const id = createdDriver.id;
       const newDriver2: DriverDTO = {
         name: 'Driver Teste',
-        birth_date: new Date(),
+        birth_date: "12/06/1999",
         license: '6468798789',
         car_model: 'Trole',
         license_plate: 'PMN-1234567',
