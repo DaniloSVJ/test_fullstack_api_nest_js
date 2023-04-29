@@ -37,8 +37,13 @@ yarn run start:dev
   ou
 npm run start:dev
 
-Por fim você pode consumir a api pela documentação do swagger. Para isso é só abrir o navegador com o seguinte endereço:
+Você pode consumir a api pela documentação do swagger. Para isso é só abrir o navegador com o seguinte endereço:
 http://localhost:3000/api/
+
+
+Para fazer os teste do projeto, basta você executar o seguinte comando no terminal da pasta do projeto: 
+
+'yarn test' ou 'npm test'
 
 
 
